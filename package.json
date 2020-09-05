@@ -10,16 +10,28 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:cobol-sourceanalysisextention.helloWorld"
+		"onCommand:cobol-sourceanalysisextention.sourceAnalysis"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "cobol-sourceanalysisextention.helloWorld",
-				"title": "Hello World"
+				"command": "cobol-sourceanalysisextention.sourceAnalysis",
+				"title": "COBOLソース解析"
 			}
-		]
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "cobol-sourceanalysisextention.sourceAnalysis"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "cobol-sourceanalysisextention.sourceAnalysis"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
