@@ -3,6 +3,7 @@
 	"displayName": "COBOL_SourceAnalysisExtention",
 	"description": "COBOLソース解析",
 	"version": "0.0.1",
+	"publisher": "koob",
 	"engines": {
 		"vscode": "^1.48.0"
 	},

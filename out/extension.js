@@ -11,9 +11,9 @@ function activate(context) {
     let disposable = vscode.commands.registerCommand('cobol-sourceanalysisextention.sourceAnalysis', () => {
         let editor = vscode.window.activeTextEditor; // エディタ取得
         let fileName = editor === null || editor === void 0 ? void 0 : editor.document.fileName; // ファイル名称取得
-        var dir_home = process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"];
-        var dir_desktop = require("path").join(dir_home, "Desktop");
-        const EXE_FILE = dir_desktop + "\\ソース解析ツール\\ExecCobolAnalysis\\ExecCobolAnalysis.exe";
+        // var dir_home = process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"]; //OneDriveがパスに含まれる可能性があるため、削除
+        // var dir_desktop = require("path").join(dir_home, "Desktop");
+        const EXE_FILE = "C:\\ソース解析ツール\\ExecCobolAnalysis\\ExecCobolAnalysis.exe";
         child_process_1.exec(EXE_FILE + " " + fileName, (error, stdout, stderr) => {
             if (error)
                 vscode.window.showErrorMessage("エラーが発生しました。詳細はログファイルをご確認ください。");

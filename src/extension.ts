@@ -11,9 +11,9 @@ export function activate(context: vscode.ExtensionContext) {
 		let editor = vscode.window.activeTextEditor; // エディタ取得
 		let fileName = editor?.document.fileName; // ファイル名称取得
 
-		var dir_home = process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"];
-		var dir_desktop = require("path").join(dir_home, "Desktop");
-		const EXE_FILE = dir_desktop + "\\ソース解析ツール\\ExecCobolAnalysis\\ExecCobolAnalysis.exe";
+		// var dir_home = process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"]; //OneDriveがパスに含まれる可能性があるため、削除
+		// var dir_desktop = require("path").join(dir_home, "Desktop");
+		const EXE_FILE = "C:\\ソース解析ツール\\ExecCobolAnalysis\\ExecCobolAnalysis.exe";
 		exec(EXE_FILE + " " + fileName, (error,stdout,stderr) =>
 		{
 			if(error)
